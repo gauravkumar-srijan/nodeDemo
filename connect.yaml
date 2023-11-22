@@ -1,7 +1,10 @@
 deployAs:
-  - name: service
+  - name: nodeDemo
     applicationType: service
     endpoint: /service
+    scripts:
+      postDeploy: npm install && npm run connector:post-deploy
+      preUndeploy: npm install && npm run connector:pre-undeploy
     configuration:
       standardConfiguration:
         - key: CTP_REGION
